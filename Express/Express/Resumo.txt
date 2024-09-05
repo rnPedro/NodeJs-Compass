@@ -1,0 +1,180 @@
+
+### Express.js
+
+**Express.js** é um framework minimalista e flexível para Node.js que fornece um robusto conjunto de recursos para desenvolver aplicações web e APIs. 
+
+#### Principais Características:
+- **Roteamento:** Define rotas de maneira simples e eficaz para manipular solicitações HTTP (GET, POST, PUT, DELETE, etc.).
+- **Middleware:** Usa middleware para lidar com solicitações e respostas, o que permite adicionar funcionalidades como autenticação, logging, e manipulação de erros.
+- **Desenvolvimento Rápido:** Facilita o desenvolvimento rápido com uma sintaxe limpa e uma estrutura modular.
+- **Gerenciamento de Vistas:** Suporta mecanismos de template como Pug, EJS e Handlebars para gerar HTML dinamicamente.
+- **Ampla Comunidade:** Tem uma vasta gama de plugins e middleware desenvolvidos pela comunidade.
+
+#### Exemplo Básico:
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
+});
+```
+
+### NPM
+
+**NPM** (Node Package Manager) é o gerenciador de pacotes padrão para Node.js. Ele permite que os desenvolvedores instalem, compartilhem e gerenciem dependências de bibliotecas e ferramentas necessárias para seus projetos.
+
+#### Principais Características:
+- **Registro de Pacotes:** Acesse um vasto registro de pacotes públicos que podem ser instalados e utilizados em projetos.
+- **Gerenciamento de Dependências:** Adicione, remova e atualize dependências de maneira simples usando comandos de linha de comando.
+- **Scripts de NPM:** Automatize tarefas comuns do projeto (como testes, builds e execução de servidor) através de scripts definidos no arquivo `package.json`.
+- **Versionamento:** Controle versões específicas de pacotes para garantir consistência e evitar problemas de compatibilidade.
+
+#### Comandos Básicos:
+- **Inicializar um Projeto:** 
+  ```sh
+  npm init
+  ```
+  Cria um novo arquivo `package.json` para o seu projeto.
+  
+- **Instalar um Pacote:**
+  ```sh
+  npm install <package-name>
+  ```
+  Instala um pacote e adiciona como dependência no `package.json`.
+  
+- **Instalar uma Dependência de Desenvolvimento:**
+  ```sh
+  npm install <package-name> --save-dev
+  ```
+  Instala um pacote apenas para desenvolvimento (não necessário em produção).
+
+- **Executar Scripts:**
+  ```sh
+  npm run <script-name>
+  ```
+  Executa um script definido no `package.json`.
+
+### Como Express.js e NPM Trabalham Juntos:
+
+Ao desenvolver uma aplicação com Express.js, você geralmente usará NPM para instalar o Express e outras dependências necessárias. O `package.json` gerencia essas dependências e NPM facilita a instalação e o gerenciamento delas.
+
+#### Exemplo de `package.json` para um Projeto Express:
+```json
+{
+  "name": "meu-projeto-express",
+  "version": "1.0.0",
+  "description": "Um projeto básico com Express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "author": "Seu Nome",
+  "license": "ISC"
+}
+```
+
+Para iniciar o servidor Express, você pode usar o comando `npm start`, que executa o script definido como `start` no `package.json`.
+
+### Resumo
+
+- **Express.js:** Um framework minimalista para Node.js que facilita o desenvolvimento de aplicações web e APIs com uma abordagem modular.
+- **NPM:** O gerenciador de pacotes para Node.js, que ajuda a instalar, atualizar e gerenciar dependências e scripts de projeto.
+
+Ambos são ferramentas essenciais para o desenvolvimento com Node.js, proporcionando uma maneira eficiente de criar e manter aplicações modernas.
+
+Query parameters (ou parâmetros de consulta) são uma parte da URL que aparece após o ponto de interrogação (`?`) e são usados para passar informações adicionais para servidores web ou aplicativos. Eles são comumente utilizados em HTTP GET requests para enviar dados de cliente para servidor, permitindo a personalização de respostas, a filtragem de resultados, a especificação de detalhes adicionais sobre a solicitação, entre outras funcionalidades.
+
+### Estrutura de Query Parameters
+
+Uma URL com query parameters tem a seguinte estrutura básica:
+```
+http://example.com/path?param1=value1&param2=value2
+```
+
+Aqui está a decomposição:
+- `http://example.com/path`: A URL base.
+- `?`: Indica o início dos query parameters.
+- `param1=value1`: O primeiro parâmetro, com `param1` sendo o nome do parâmetro e `value1` sendo o valor.
+- `&`: Separa múltiplos parâmetros.
+- `param2=value2`: O segundo parâmetro, seguindo o mesmo formato do primeiro.
+
+### Exemplo Prático
+
+Imagine que você está acessando uma API para buscar informações de usuários. A URL pode ser:
+```
+https://api.exemplo.com/users?age=25&country=BR
+```
+
+Neste exemplo:
+- `age=25` filtra os usuários com 25 anos de idade.
+- `country=BR` filtra os usuários do Brasil.
+
+### Uso Comum de Query Parameters
+
+1. **Filtragem de Dados**: Como no exemplo acima, onde você pode filtrar resultados com base em idade e país.
+2. **Paginação**: Usado para dividir grandes conjuntos de dados em partes menores, por exemplo:
+   ```
+   https://api.exemplo.com/products?page=2&limit=10
+   ```
+   Aqui, `page=2` solicita a segunda página de resultados e `limit=10` define que cada página deve ter 10 itens.
+3. **Ordenação**: Para ordenar os resultados com base em certos critérios, por exemplo:
+   ```
+   https://api.exemplo.com/products?sort=price&order=asc
+   ```
+   `sort=price` ordena os produtos pelo preço e `order=asc` indica uma ordem crescente.
+4. **Autenticação e Chaves de API**: Algumas APIs exigem uma chave de API como parâmetro, por exemplo:
+   ```
+   https://api.exemplo.com/data?api_key=YOUR_API_KEY
+   ```
+
+### Como Acessar Query Parameters em Programação
+
+Dependendo da linguagem de programação ou framework que você está usando, existem diferentes maneiras de acessar os query parameters. Aqui estão alguns exemplos:
+
+#### JavaScript (Node.js/Express)
+```javascript
+app.get('/search', (req, res) => {
+    const { term, limit } = req.query;
+    console.log(`Termo de busca: ${term}, Limite: ${limit}`);
+    res.send('Resultados da busca');
+});
+```
+
+#### Python (Flask)
+```python
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/search')
+def search():
+    term = request.args.get('term')
+    limit = request.args.get('limit')
+    return f"Termo de busca: {term}, Limite: {limit}"
+```
+
+#### PHP
+```php
+<?php
+$term = $_GET['term'];
+$limit = $_GET['limit'];
+echo "Termo de busca: $term, Limite: $limit";
+?>
+```
+
+Query parameters são uma ferramenta poderosa e flexível para trabalhar com dados em URLs, proporcionando uma forma simples de enviar informações adicionais nas requisições HTTP.
+
+SEMPRE ABRIR O CMD E UTILIZAR UM O CD PARA NAVEGAR NA PASTA DO MEU PROJETO NODE E Inicializar ELE, E RODAR SEMPRE UTILIZANDO O NODEMON PARA O SERVIDOR ATUALIZAR SOZINHO, SEM A NECESSIDADE DE FICAR 
+DANDO ^C PARA RESETAR ELE.
+
+NPM INIT NO PROJETO, PREENCHE COM AS INFO -> ABRE A PASTA NO VSCODE -> CRIA O ARQUIVO INDEX.JS E TACA CÓDIGO NO NEGÓCIO  

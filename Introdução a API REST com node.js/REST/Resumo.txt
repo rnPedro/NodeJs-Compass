@@ -1,0 +1,73 @@
+### O Que É REST?
+
+REST (Representational State Transfer) é um estilo arquitetural para a criação de serviços web. Ele foi introduzido por Roy Fielding em sua tese de doutorado em 2000. REST define um conjunto de restrições e princípios que, quando aplicados corretamente, permitem a construção de sistemas escaláveis, performáticos e fáceis de manter.
+
+### Princípios Fundamentais do REST
+
+1. **Arquitetura Cliente-Servidor:**
+   - A arquitetura REST separa as responsabilidades do cliente e do servidor. O cliente é responsável pela interface do usuário e a interação com o usuário, enquanto o servidor gerencia os dados e a lógica de negócio. Isso permite a independência e evolução de ambos os lados.
+
+2. **Stateless:**
+   - Cada requisição do cliente para o servidor deve conter todas as informações necessárias para o servidor entender e processar a solicitação. O servidor não deve armazenar nenhuma informação sobre o estado do cliente entre as requisições. Isso simplifica a escalabilidade do servidor.
+
+3. **Cacheável:**
+   - As respostas do servidor devem ser explicitamente rotuladas como cacheáveis ou não cacheáveis. Se uma resposta for cacheável, o cliente pode reutilizar a resposta subsequente sem consultar o servidor, o que melhora a eficiência e o desempenho.
+
+4. **Interface Uniforme:**
+   - REST define uma interface uniforme entre os componentes, facilitando a interação e a compreensão do sistema. Isso é alcançado através de:
+     - **Identificação de recursos:** Cada recurso é identificado por um URL.
+     - **Manipulação de recursos por meio de representações:** Os recursos são manipulados através de suas representações (por exemplo, JSON, XML).
+     - **Mensagens auto-descritivas:** Cada mensagem contém informações suficientes para descrever como processar a mensagem.
+     - **Hypermedia As The Engine Of Application State (HATEOAS):** O cliente interage com a aplicação inteiramente por meio de hypermedia fornecidas dinamicamente pelo servidor.
+
+5. **Sistema em Camadas:**
+   - A arquitetura de um sistema REST pode ser composta de várias camadas, onde cada camada possui uma funcionalidade específica. Isso pode incluir servidores de balanceamento de carga, proxies e gateways, que podem ser intermediários entre o cliente e o servidor final.
+
+6. **Código Sob Demanda (Opcional):**
+   - Servidores podem fornecer código executável ou scripts para os clientes, melhorando a funcionalidade de cliente em tempo de execução. Este é um princípio opcional e não é amplamente usado.
+
+### Como Funciona o REST?
+
+No REST, os recursos são identificados por URIs (Uniform Resource Identifiers) e manipulados usando um conjunto de operações padrão do HTTP. Aqui estão os principais métodos HTTP usados em uma API RESTful:
+
+- **GET:** Recupera uma representação de um recurso.
+- **POST:** Cria um novo recurso.
+- **PUT:** Atualiza um recurso existente ou cria um novo recurso se ele não existir.
+- **DELETE:** Remove um recurso.
+- **PATCH:** Aplica modificações parciais a um recurso.
+
+### Exemplo de Operações RESTful
+
+Suponha que você tenha uma API para gerenciar usuários.
+
+**Recurso: Usuário**
+- **GET /users:** Recupera uma lista de todos os usuários.
+- **GET /users/{id}:** Recupera informações de um usuário específico.
+- **POST /users:** Cria um novo usuário.
+- **PUT /users/{id}:** Atualiza as informações de um usuário específico.
+- **DELETE /users/{id}:** Remove um usuário específico.
+
+### Exemplo de Requisição e Resposta
+
+**Requisição GET para recuperar um usuário:**
+```
+GET /users/123 HTTP/1.1
+Host: api.example.com
+Authorization: Bearer <token>
+```
+
+**Resposta:**
+```json
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+```
+
+### Conclusão
+
+REST é um estilo arquitetural para a construção de serviços web, baseado em princípios que promovem a escalabilidade, simplicidade e independência entre cliente e servidor. Utilizando operações HTTP padrão, REST permite que recursos sejam manipulados através de suas representações, facilitando a criação e manutenção de APIs web.

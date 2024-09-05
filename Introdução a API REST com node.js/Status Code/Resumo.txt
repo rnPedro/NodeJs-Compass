@@ -1,0 +1,87 @@
+### Códigos de Status HTTP
+
+#### 1xx - Informational
+- **100 Continue**: O servidor recebeu os cabeçalhos da solicitação e o cliente pode prosseguir para enviar o corpo da solicitação.
+- **101 Switching Protocols**: O servidor aceita mudar o protocolo.
+- **102 Processing**: O servidor está processando a solicitação, mas a resposta ainda não está disponível.
+
+#### 2xx - Success
+- **200 OK**: A solicitação foi bem-sucedida.
+- **201 Created**: A solicitação foi bem-sucedida e um novo recurso foi criado.
+- **202 Accepted**: A solicitação foi aceita para processamento, mas não foi concluída.
+- **203 Non-Authoritative Information**: A resposta contém metainformação não original do servidor.
+- **204 No Content**: A solicitação foi bem-sucedida, mas não há conteúdo para enviar na resposta.
+- **205 Reset Content**: A solicitação foi bem-sucedida, e o cliente deve reiniciar a exibição do documento.
+- **206 Partial Content**: O servidor está entregando apenas parte do recurso devido ao cabeçalho de intervalo enviado pelo cliente.
+- **207 Multi-Status**: O corpo da mensagem contém informações de status para vários recursos.
+
+#### 3xx - Redirection
+- **300 Multiple Choices**: Existem várias opções para o recurso que o cliente pode seguir.
+- **301 Moved Permanently**: O recurso solicitado foi movido permanentemente para um novo URL.
+- **302 Found**: O recurso foi encontrado, mas está temporariamente localizado em um URL diferente.
+- **303 See Other**: O cliente deve usar um URL diferente para acessar o recurso.
+- **304 Not Modified**: O recurso não foi modificado desde a última solicitação.
+- **305 Use Proxy**: O recurso solicitado deve ser acessado através do proxy especificado.
+- **307 Temporary Redirect**: O recurso foi temporariamente movido para um URL diferente, mas o cliente deve usar o URL original para futuras solicitações.
+- **308 Permanent Redirect**: O recurso foi permanentemente movido para um novo URL.
+
+#### 4xx - Client Error
+- **400 Bad Request**: A solicitação do cliente é inválida ou malformada.
+- **401 Unauthorized**: A autenticação é necessária e falhou ou ainda não foi fornecida.
+- **402 Payment Required**: Reservado para uso futuro.
+- **403 Forbidden**: O servidor entendeu a solicitação, mas se recusa a autorizá-la.
+- **404 Not Found**: O recurso solicitado não foi encontrado.
+- **405 Method Not Allowed**: O método especificado na solicitação não é permitido para o recurso.
+- **406 Not Acceptable**: O recurso solicitado é capaz de gerar apenas conteúdo não aceitável de acordo com os cabeçalhos de aceitação enviados na solicitação.
+- **407 Proxy Authentication Required**: A autenticação do proxy é necessária.
+- **408 Request Timeout**: O servidor expirou esperando pela solicitação.
+- **409 Conflict**: A solicitação não pode ser concluída devido a um conflito com o estado atual do recurso.
+- **410 Gone**: O recurso solicitado não está mais disponível e não será disponibilizado novamente.
+- **411 Length Required**: O comprimento do conteúdo é necessário.
+- **412 Precondition Failed**: Uma ou mais condições dadas nos cabeçalhos da solicitação foram avaliadas como falsas.
+- **413 Payload Too Large**: A entidade da solicitação é maior do que os limites definidos pelo servidor.
+- **414 URI Too Long**: O URI fornecido foi muito longo para o servidor processar.
+- **415 Unsupported Media Type**: O tipo de mídia da entidade da solicitação não é suportado pelo servidor.
+- **416 Range Not Satisfiable**: O intervalo especificado pelo cabeçalho da solicitação não pode ser satisfeito.
+- **417 Expectation Failed**: O servidor não pode atender aos requisitos do campo de cabeçalho Expect da solicitação.
+- **418 I'm a teapot**: Um código humorístico definido no RFC 2324 (Hyper Text Coffee Pot Control Protocol).
+- **422 Unprocessable Entity**: A solicitação está bem formada, mas não pode ser processada devido a erros semânticos.
+- **423 Locked**: O recurso que está sendo acessado está bloqueado.
+- **424 Failed Dependency**: A solicitação falhou devido à falha de uma solicitação anterior.
+- **426 Upgrade Required**: O cliente deve mudar para um protocolo diferente.
+- **428 Precondition Required**: O servidor requer que a solicitação seja condicional.
+- **429 Too Many Requests**: O usuário enviou muitas solicitações em um determinado período de tempo.
+- **431 Request Header Fields Too Large**: Os campos do cabeçalho da solicitação são muito grandes.
+
+#### 5xx - Server Error
+- **500 Internal Server Error**: O servidor encontrou uma condição inesperada que o impediu de atender à solicitação.
+- **501 Not Implemented**: O servidor não suporta a funcionalidade necessária para atender à solicitação.
+- **502 Bad Gateway**: O servidor, ao atuar como gateway ou proxy, recebeu uma resposta inválida do servidor upstream.
+- **503 Service Unavailable**: O servidor está temporariamente indisponível (devido a sobrecarga ou manutenção).
+- **504 Gateway Timeout**: O servidor, ao atuar como gateway ou proxy, não recebeu uma resposta a tempo do servidor upstream.
+- **505 HTTP Version Not Supported**: O servidor não suporta a versão do protocolo HTTP usada na solicitação.
+- **506 Variant Also Negotiates**: O servidor possui uma configuração interna que não é capaz de negociar o conteúdo da solicitação.
+- **507 Insufficient Storage**: O servidor não pode armazenar a representação necessária para completar a solicitação.
+- **508 Loop Detected**: O servidor detectou um loop infinito ao processar a solicitação.
+- **510 Not Extended**: A extensão necessária para atender à solicitação não está presente.
+- **511 Network Authentication Required**: O cliente precisa se autenticar para obter acesso à rede.
+
+### Códigos Mais Importantes e Usuais
+
+- **200 OK**
+- **201 Created**
+- **204 No Content**
+- **301 Moved Permanently**
+- **302 Found**
+- **400 Bad Request**
+- **401 Unauthorized**
+- **403 Forbidden**
+- **404 Not Found**
+- **405 Method Not Allowed**
+- **409 Conflict**
+- **500 Internal Server Error**
+- **502 Bad Gateway**
+- **503 Service Unavailable**
+- **504 Gateway Timeout**
+
+Esses códigos são frequentemente utilizados em aplicações web para indicar o resultado das requisições HTTP e ajudar na depuração e no tratamento de erros.

@@ -1,0 +1,30 @@
+REST (Representational State Transfer) e RESTful são conceitos frequentemente usados no desenvolvimento de APIs, mas há uma distinção clara entre eles:
+
+### REST (Representational State Transfer)
+
+REST é um estilo arquitetural para sistemas distribuídos, especialmente para web services. Foi introduzido por Roy Fielding em sua tese de doutorado em 2000. Ele define um conjunto de restrições e princípios que, quando seguidos, permitem a construção de aplicações escaláveis, performáticas e facilmente mantíveis. As principais características do REST incluem:
+
+1. **Arquitetura Cliente-Servidor**: O cliente e o servidor são separados, permitindo que possam evoluir independentemente.
+2. **Sem Estado (Stateless)**: Cada requisição do cliente para o servidor deve conter todas as informações necessárias para entender e processar o pedido. O servidor não deve armazenar nenhum dado de sessão sobre o cliente.
+3. **Cacheável**: As respostas devem ser rotuladas como cacheáveis ou não-cacheáveis, permitindo que os clientes armazenem respostas reutilizáveis para melhorar a performance.
+4. **Interface Uniforme**: É uma interface comum entre todos os componentes de um sistema RESTful, permitindo a simplificação e a desacoplagem da arquitetura. Inclui a identificação dos recursos, manipulação de recursos através de representações, mensagens auto-descritivas e hipermídia como o motor do estado do aplicativo (HATEOAS).
+5. **Sistema em Camadas**: A arquitetura pode ser composta por camadas, cada uma delas realizando uma função específica, escondendo a complexidade de outras camadas.
+6. **Código Sob Demanda (Opcional)**: Os servidores podem estender a funcionalidade dos clientes fornecendo código executável (por exemplo, applets ou scripts).
+
+### RESTful
+
+RESTful refere-se à implementação dessas restrições e princípios para criar um web service que segue o estilo arquitetural REST. Ou seja, uma API RESTful é uma API que aplica os princípios REST. Uma API é considerada RESTful se cumprir com os seguintes critérios:
+
+1. **Usar Métodos HTTP**: Utiliza métodos HTTP (GET, POST, PUT, DELETE, etc.) de forma adequada para realizar operações nos recursos.
+2. **URI de Recursos**: Cada recurso é identificado por uma URI única. Os URIs são usados para acessar e manipular recursos.
+3. **Representações de Recursos**: Os recursos são representados em formatos como JSON, XML, HTML, etc. O cliente pode escolher o formato desejado através de cabeçalhos HTTP.
+4. **Manipulação de Recursos através de Representações**: Através dos métodos HTTP, os recursos podem ser manipulados (criados, lidos, atualizados, deletados).
+5. **Mensagens Auto-Descritivas**: As mensagens trocadas entre cliente e servidor contêm todas as informações necessárias para entender o conteúdo, incluindo cabeçalhos HTTP e status codes.
+6. **HATEOAS (Hypermedia As The Engine Of Application State)**: A navegação através dos recursos é feita através de links hipermídia fornecidos nas respostas, permitindo ao cliente descobrir e interagir com outras partes da API de forma dinâmica.
+
+### Resumindo
+
+- **REST** é um conjunto de restrições arquiteturais para criar serviços web escaláveis e eficientes.
+- **RESTful** é a aplicação prática dessas restrições para criar APIs que seguem o estilo arquitetural REST.
+
+Portanto, enquanto REST é a teoria e o conjunto de princípios, RESTful é a prática da implementação desses princípios em serviços web.

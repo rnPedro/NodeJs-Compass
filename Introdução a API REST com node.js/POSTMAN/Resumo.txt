@@ -1,0 +1,54 @@
+### Postman: Resumo e Utilidade
+
+**Postman** é uma ferramenta amplamente utilizada por desenvolvedores e engenheiros de software para testar APIs (Application Programming Interfaces). Ele oferece uma interface intuitiva para realizar e automatizar testes de requisições HTTP, facilitando o desenvolvimento, depuração e documentação de APIs. 
+
+### Funcionalidades Principais do Postman
+
+1. **Envio de Requisições HTTP**:
+   - Suporta todos os métodos HTTP (GET, POST, PUT, DELETE, PATCH, etc.).
+   - Permite a configuração detalhada de cabeçalhos, parâmetros de consulta, corpo da requisição e autenticação.
+
+2. **Coleções de Requisições**:
+   - Os usuários podem organizar requisições em coleções, facilitando a reutilização e organização dos testes.
+   - As coleções podem ser exportadas e compartilhadas com outros membros da equipe.
+
+3. **Variáveis de Ambiente**:
+   - Permite a criação de variáveis globais, de ambiente e de coleção para reutilizar valores comuns em várias requisições.
+   - Suporte para diferentes ambientes (desenvolvimento, teste, produção), permitindo alternar rapidamente entre eles.
+
+4. **Testes Automatizados**:
+   - Suporte para escrever scripts em JavaScript para automatizar testes e validações de respostas.
+   - Integração com frameworks de testes como Newman para executar testes automatizados em CI/CD pipelines.
+
+5. **Documentação de APIs**:
+   - Gera documentação de API de forma automática a partir das coleções de requisições.
+   - Documentação interativa que pode ser compartilhada publicamente ou internamente.
+
+6. **Monitoramento de APIs**:
+   - Permite configurar monitores para testar a disponibilidade e desempenho de APIs em intervalos regulares.
+   - Alertas e relatórios sobre falhas e desempenho.
+
+7. **Integrações**:
+   - Integra-se com várias ferramentas de desenvolvimento e serviços como GitHub, Jenkins, Slack, e outros, facilitando a integração contínua e a colaboração.
+
+### Para que Serve o Postman
+
+1. **Desenvolvimento de APIs**:
+   - Ajudar desenvolvedores a criar e depurar APIs, permitindo testar rapidamente diferentes cenários e configurações.
+
+2. **Testes de API**:
+   - Facilita a validação de funcionalidades de API, garantindo que elas funcionem conforme esperado.
+   - Automação de testes para regressão e integração contínua.
+
+3. **Documentação de API**:
+   - Gera documentação clara e compreensível, essencial para que outros desenvolvedores entendam como usar a API.
+
+4. **Colaboração**:
+   - Permite que equipes de desenvolvimento colaborem de forma eficiente, compartilhando coleções e resultados de testes.
+
+5. **Monitoramento**:
+   - Monitora a saúde e o desempenho das APIs em tempo real, garantindo que estejam sempre disponíveis e funcionando corretamente.
+
+### Resumo
+
+O **Postman** é uma ferramenta versátil e poderosa para o desenvolvimento, teste, documentação e monitoramento de APIs. Ele melhora significativamente a eficiência e a produtividade dos desenvolvedores, ao mesmo tempo em que assegura a qualidade e a confiabilidade das APIs.
